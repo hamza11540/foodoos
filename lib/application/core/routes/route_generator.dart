@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:foodoos/application/core/routes/route_path.dart';
 import 'package:foodoos/application/core/routes/routes.dart';
 import 'package:foodoos/ui/views/sign_in_screen/sign_in_screen.dart';
+import 'package:foodoos/ui/views/sign_up_screen/sign_up_screen.dart';
 import 'package:foodoos/ui/views/splash_screen/splash_screen.dart';
 import 'package:foodoos/ui/views/welcome_screen/welcome_screen.dart';
 
@@ -19,6 +20,8 @@ class RouteGenerator {
         return PageRouter.fadeScale(() => const WelcomeScreen());
       case RoutePath.signInScreen:
         return PageRouter.fadeScale(() => const SignInScreen());
+      case RoutePath.signUpScreen:
+        return PageRouter.fadeScale(() => const SignUpScreen());
 
 
       default:

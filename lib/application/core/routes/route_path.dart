@@ -3,6 +3,7 @@ class RoutePath {
   static const splashScreen = '${initialRoute}splashScreen';
   static const welcomeScreen = '${initialRoute}welcomeScreen';
   static const signInScreen = '${initialRoute}signInScreen';
+  static const signUpScreen = '${initialRoute}signUpScreen';
 
 
 }

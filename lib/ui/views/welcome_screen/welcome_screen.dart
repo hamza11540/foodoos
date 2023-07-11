@@ -19,7 +19,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with BaseMixin{
     return Scaffold(
       body: Column(
         children: [
-          Image.asset(AppConstant.welcome, width: double.infinity,),
+          Image.asset(AppConstant.welcome, width: MediaQuery.of(context).size.width, fit: BoxFit.contain,),
           const SizedBox(
             height: 10,
           ),
