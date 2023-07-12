@@ -58,19 +58,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> with BaseMixin{
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 60,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      border: Border.all(color: AppColors.mainOrange)),
-                  child: const Center(
-                    child: Text(
-                      "Create an account",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: AppColors.mainOrange,
-                          fontWeight: FontWeight.w500),
+                InkWell(
+                  onTap: (){
+                    routeNavigator.pushNamedAndRemoveUntil(RoutePath.signUpScreen);
+                  },
+                  child: Container(
+                    height: 60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        border: Border.all(color: AppColors.mainOrange)),
+                    child: const Center(
+                      child: Text(
+                        "Create an account",
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: AppColors.mainOrange,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 )

@@ -4,6 +4,7 @@ class RoutePath {
   static const welcomeScreen = '${initialRoute}welcomeScreen';
   static const signInScreen = '${initialRoute}signInScreen';
   static const signUpScreen = '${initialRoute}signUpScreen';
+  static const otpScreen = '${initialRoute}otpScreen';
 
 
 }

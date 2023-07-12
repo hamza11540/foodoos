@@ -14,7 +14,7 @@ class SignInScreen extends StatefulWidget {
   State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> with BaseMixin{
+class _SignInScreenState extends State<SignInScreen> with BaseMixin {
   TextEditingController phoneNumber = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -29,6 +29,25 @@ class _SignInScreenState extends State<SignInScreen> with BaseMixin{
             alignment: Alignment.center,
           ),
           Positioned(
+              left: 15,
+              top: 50,
+              child: InkWell(
+                onTap: () {
+                  routeNavigator.pop();
+                },
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                      color: AppColors.grey,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: const Icon(
+                    Icons.arrow_back,
+                    size: 16,
+                  ),
+                ),
+              )),
+          Positioned(
               left: 0, right: 0, child: Image.asset(AppConstant.fullLogo)),
           Positioned(
               bottom: 50,
@@ -41,12 +60,16 @@ class _SignInScreenState extends State<SignInScreen> with BaseMixin{
                     "Phone Verification",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                  const SizedBox(height: 8,),
+                  const SizedBox(
+                    height: 8,
+                  ),
                   const Text(
                     "Let's explore the food out there",
                     style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
-                  const SizedBox(height: 35,),
+                  const SizedBox(
+                    height: 35,
+                  ),
                   TextFormField(
                     controller: phoneNumber,
                     cursorColor: Colors.grey,
@@ -67,10 +90,13 @@ class _SignInScreenState extends State<SignInScreen> with BaseMixin{
                       return null;
                     },
                   ),
-                  const SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   MainButton(
                     callback: () {
-                      //   routeNavigator.pushNamedAndRemoveUntil(RoutePath.signInScreen);
+                      routeNavigator
+                          .pushNamedAndRemoveUntil(RoutePath.otpScreen);
                     },
                     width: double.infinity,
                     height: 60,
@@ -78,8 +104,10 @@ class _SignInScreenState extends State<SignInScreen> with BaseMixin{
                     color: AppColors.mainOrange,
                     textColor: AppColors.white,
                   ),
-                  const SizedBox(height: 30,),
-                   Row(
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
@@ -87,7 +115,7 @@ class _SignInScreenState extends State<SignInScreen> with BaseMixin{
                         style: TextStyle(fontSize: 10, color: Colors.black),
                       ),
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           routeNavigator.pushNamed(RoutePath.signUpScreen);
                         },
                         child: const Text(

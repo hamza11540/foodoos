@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen>
             Align(
                 alignment: Alignment.center,
                 child: Image.asset(
-                  AppConstant.logo,
+                  AppConstant.fullLogo,
                 )),
           ],
         ),

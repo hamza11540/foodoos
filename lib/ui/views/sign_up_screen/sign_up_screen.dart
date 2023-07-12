@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodoos/mixin/base_mixin.dart';
 
+import '../../../application/core/routes/route_path.dart';
 import '../../../presentation/utilis/app_colors.dart';
 import '../../../presentation/utilis/appconstant.dart';
 import '../../widgets/main_button.dart';
@@ -11,7 +13,7 @@ class SignUpScreen extends StatefulWidget {
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignUpScreenState extends State<SignUpScreen> with BaseMixin{
   TextEditingController fullName = TextEditingController();
 
   TextEditingController phoneNumber = TextEditingController();
@@ -28,6 +30,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
             width: double.infinity,
             alignment: Alignment.center,
           ),
+          Positioned(
+              left: 15,
+              top: 50,
+              child: InkWell(
+                onTap: (){
+                  routeNavigator.pop();
+                },
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                      color: AppColors.grey,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Icon(
+                    Icons.arrow_back,
+                    size: 16,
+                  ),
+                ),
+              )),
           Positioned(
               left: 0, right: 0, child: Image.asset(AppConstant.fullLogo)),
           Positioned(
@@ -92,7 +113,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: 20,),
                   MainButton(
                     callback: () {
-                      //   routeNavigator.pushNamedAndRemoveUntil(RoutePath.signInScreen);
+                         routeNavigator.pushNamedAndRemoveUntil(RoutePath.otpScreen);
                     },
                     width: double.infinity,
                     height: 60,
